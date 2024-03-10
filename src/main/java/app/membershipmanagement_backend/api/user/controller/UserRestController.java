@@ -1,8 +1,8 @@
 package app.membershipmanagement_backend.api.user.controller;
 
 import app.membershipmanagement_backend.api.DefaultResultDto;
-import app.membershipmanagement_backend.api.user.dto.UserProfileRegisterDto;
-import app.membershipmanagement_backend.api.user.service.UserProfileService;
+import app.membershipmanagement_backend.api.user.dto.UserDeleteDto;
+import app.membershipmanagement_backend.api.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,17 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/user")
-public class UserProfileRestcontroller {
+public class UserRestController {
 
     @Autowired
-    private UserProfileService userProfileService;
+    private UserService userService;
 
-    @PostMapping("/profile/register")
-    public ResponseEntity<DefaultResultDto> registerProfile(@RequestBody UserProfileRegisterDto userProfileRegisterDto){
+    @PostMapping("/delete")
+    public ResponseEntity<DefaultResultDto> deleteUser(@RequestBody UserDeleteDto userDeleteDto){
 
-        return ResponseEntity.ok(userProfileService.profileRegister(userProfileRegisterDto));
+        return ResponseEntity.ok(userService.deleteUser(userDeleteDto));
     }
-
 
 
 }
