@@ -2,12 +2,10 @@ package app.membershipmanagement_backend.api.account.controller;
 
 import app.membershipmanagement_backend.api.DefaultResultDto;
 import app.membershipmanagement_backend.api.account.dto.UserRegisterDto;
-import app.membershipmanagement_backend.api.account.service.UserService;
-import io.swagger.v3.oas.models.responses.ApiResponse;
+import app.membershipmanagement_backend.api.account.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -18,12 +16,12 @@ import java.io.IOException;
 public class AccountRestController {
 
     @Autowired
-    private UserService userService;
+    private UserAccountService userAccountService;
 
     @PostMapping("/register")
     public ResponseEntity<DefaultResultDto> register(@RequestBody UserRegisterDto userRegisterDto) {
         System.out.println("나 컨트롤러 들어온 응애");
-        return ResponseEntity.ok(userService.register(userRegisterDto));
+        return ResponseEntity.ok(userAccountService.register(userRegisterDto));
     }
 
     @PostMapping("/check/userId")
