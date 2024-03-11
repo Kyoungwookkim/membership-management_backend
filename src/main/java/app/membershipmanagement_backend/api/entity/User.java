@@ -3,13 +3,13 @@ package app.membershipmanagement_backend.api.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@ToString
 @Table(name = "TB_USER")
 public class User {
 
@@ -26,4 +26,5 @@ public class User {
 
     @Column(unique = true, name = "USER_NAME", length = 20, nullable = false)
     private String userName;
+
 }

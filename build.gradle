@@ -33,6 +33,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+    // JUnit 5 의존성 추가
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+    // 스프링 부트 테스트 의존성 추가
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+
 }
 
 tasks.named('test') {

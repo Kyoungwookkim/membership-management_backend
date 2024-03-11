@@ -27,6 +27,7 @@ public class UserAccountService {
     @Transactional
     public DefaultResultDto register(UserRegisterDto userRegisterDto){
         System.out.println("나 서비스 들어온 응애");
+        System.out.println(userRegisterDto.getUserName());
         if (accountRepository.existsByUserId(userRegisterDto.getUserId())) {
             throw new CustomException("아이디가 이미 존재합니다.", ErrorCode.SIGN_UP_ID_DUPLICATE);
         }
@@ -37,10 +38,8 @@ public class UserAccountService {
 
         accountRepository.save(user);
 
-        User User2 = accountRepository.findByUserId(userRegisterDto.getUserId());
-
         UserProfile userProfile = new UserProfile();
-        userProfile.setUser(User2);
+        userProfile.setUser(user);
         userProfile.setUserProfileNickname(userRegisterDto.getUserProfileNickname());
         userProfile.setUserPhoneNumber(userRegisterDto.getUserPhoneNumber());
         userProfile.setUserAddress(userRegisterDto.getUserAddress());
