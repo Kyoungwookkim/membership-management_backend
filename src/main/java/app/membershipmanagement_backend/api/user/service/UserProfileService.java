@@ -1,8 +1,8 @@
 package app.membershipmanagement_backend.api.user.service;
 
 import app.membershipmanagement_backend.api.DefaultResultDto;
-import app.membershipmanagement_backend.api.account.repository.AccountRepository;
-import app.membershipmanagement_backend.api.account.repository.UserProfileRepository;
+import app.membershipmanagement_backend.api.repository.AccountRepository;
+import app.membershipmanagement_backend.api.repository.UserProfileRepository;
 import app.membershipmanagement_backend.api.entity.User;
 import app.membershipmanagement_backend.api.entity.UserProfile;
 import app.membershipmanagement_backend.api.user.dto.UserProfileEditDto;

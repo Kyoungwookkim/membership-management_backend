@@ -1,7 +1,7 @@
 package app.membershipmanagement_backend.api.search.service;
 
-import app.membershipmanagement_backend.api.account.repository.AccountRepository;
-import app.membershipmanagement_backend.api.account.repository.UserProfileRepository;
+import app.membershipmanagement_backend.api.repository.AccountRepository;
+import app.membershipmanagement_backend.api.repository.UserProfileRepository;
 import app.membershipmanagement_backend.api.entity.User;
 import app.membershipmanagement_backend.api.entity.UserProfile;
 import app.membershipmanagement_backend.api.search.dto.FindUserDto;
@@ -55,6 +55,7 @@ public class FindUserService {
 
     public FindUserListDto getUserDetail(Long userNum){
         User user = accountRepository.findByUserNum(userNum);
+
         FindUserListDto findUserListDto = new FindUserListDto();
         findUserListDto.setUserId(user.getUserId());
         findUserListDto.setUserName(user.getUserName());
@@ -72,6 +73,8 @@ public class FindUserService {
         }
 
        findUserListDto.setFindUserProfileDetailDtoList(findUserProfileDetailDtos);
+
+
 
         return findUserListDto;
     }

@@ -1,4 +1,4 @@
-package app.membershipmanagement_backend.api.user.dto;
+package app.membershipmanagement_backend.api.account.dto;
 
 import lombok.*;
 

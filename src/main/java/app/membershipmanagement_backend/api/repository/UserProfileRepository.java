@@ -1,4 +1,4 @@
-package app.membershipmanagement_backend.api.account.repository;
+package app.membershipmanagement_backend.api.repository;
 
 import app.membershipmanagement_backend.api.entity.User;
 import app.membershipmanagement_backend.api.entity.UserProfile;
