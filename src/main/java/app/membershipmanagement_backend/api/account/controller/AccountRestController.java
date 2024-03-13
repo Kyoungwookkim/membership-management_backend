@@ -19,7 +19,6 @@ public class AccountRestController {
 
     @PostMapping
     public ResponseEntity<DefaultResultDto> register(@Validated @RequestBody UserRegisterDto userRegisterDto) {
-        System.out.println(userRegisterDto.getUserName());
         DefaultResultDto dto = userAccountService.register(userRegisterDto);
         return ResponseEntity.ok(dto);
     }
