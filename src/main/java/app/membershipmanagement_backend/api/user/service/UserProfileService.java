@@ -72,7 +72,6 @@ public class UserProfileService {
     @Transactional
     public DefaultResultDto deleteProfile(UserProfileDeleteDto userProfiledeleteDto) {
 
-        // userId와 userProfileNickname을 사용하여 UserProfile을 찾습니다.
         User user = accountRepository.findByUserId(userProfiledeleteDto.getUserId());
         String userProfileNickname = userProfiledeleteDto.getUserProfileNickname();
 
@@ -84,12 +83,9 @@ public class UserProfileService {
 
         UserProfile userProfile = userProfileOptional.get();
 
-        // 추가적인 검사: userMainProfile이 1이면 삭제하지 않음
         if (userProfile.getUserMainProfile() == 1) {
             return DefaultResultDto.builder().success(false).message("메인 프로필은 삭제할 수 없습니다.").build();
         }
-
-        // 필요한 경우 삭제 전에 추가적인 검사를 수행합니다.
 
         userProfileRepository.delete(userProfile);
 
