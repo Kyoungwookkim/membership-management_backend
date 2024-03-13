@@ -23,7 +23,6 @@ public class UserProfileService {
 
     @Transactional
     public DefaultResultDto profileRegister(UserProfileRegisterDto userProfileRegisterDto) {
-        System.out.println("나 여기 프로필 서비스얌");
 
         User user = accountRepository.findByUserId(userProfileRegisterDto.getUserId());
 
@@ -47,7 +46,6 @@ public class UserProfileService {
 
     @Transactional
     public DefaultResultDto profileUpdate(UserProfileEditDto userProfileEditDto) {
-        System.out.println("나 여기 프로필 서비스얌");
 
         User user = accountRepository.findByUserId(userProfileEditDto.getUserId());
 
