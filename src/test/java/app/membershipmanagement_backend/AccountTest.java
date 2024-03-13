@@ -58,7 +58,7 @@ public class AccountTest {
 
     @Test
     void testRegisterIdDuplicate() throws Exception {
-        // 먼저 동일한 아이디를 가진 사용자를 생성합니다.
+
         User existingUser = new User();
         UserProfile existingUserProfile = new UserProfile();
         existingUser.setUserId("mzd021");
@@ -67,7 +67,6 @@ public class AccountTest {
         accountRepository.save(existingUser);
 
 
-        // 이제 동일한 아이디로 새로운 사용자 등록을 시도합니다.
         UserRegisterDto userRegisterDto = new UserRegisterDto();
         userRegisterDto.setUserId("mzd021");
         userRegisterDto.setUserPassword("Test@5678");

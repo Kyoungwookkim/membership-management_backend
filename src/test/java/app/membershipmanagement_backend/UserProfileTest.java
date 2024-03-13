@@ -43,7 +43,7 @@ public class UserProfileTest {
         existingUser.setUserPassword("Test@1234");
         existingUser.setUserName("기존 사용자");
         accountRepository.save(existingUser);
-        // 기존 프로필 생성
+
         UserProfile existingUserProfile = new UserProfile();
         existingUserProfile.setUser(existingUser);
         existingUserProfile.setUserProfileNickname("황치치");
@@ -64,22 +64,20 @@ public class UserProfileTest {
                         .content(new ObjectMapper().writeValueAsString(userProfileRegisterDto)))
                 .andExpect(status().isOk());
 
-        /*User user = accountRepository.findByUserId("mzd021");
-        assertEquals(userProfileRegisterDto.getUserId(), user.getUserId());*/
 
     }
 
 
     @Test
     void testProfileRegisterWithDuplicateNickname() throws Exception {
-        // 기존 사용자 생성
+
         User existingUser = new User();
         existingUser.setUserId("mzd021");
         existingUser.setUserPassword("Test@1234");
         existingUser.setUserName("기존 사용자");
         accountRepository.save(existingUser);
 
-        // 기존 프로필 생성
+
         UserProfile existingUserProfile = new UserProfile();
         existingUserProfile.setUser(existingUser);
         existingUserProfile.setUserProfileNickname("johnny");
@@ -87,14 +85,14 @@ public class UserProfileTest {
         existingUserProfile.setUserAddress("456 Main Street");
         userProfileRepository.save(existingUserProfile);
 
-        // 테스트할 프로필 데이터 생성
+
         UserProfileRegisterDto userProfileRegisterDto = new UserProfileRegisterDto();
         userProfileRegisterDto.setUserId("mzd021");
         userProfileRegisterDto.setUserProfileNickname("johnny"); // 중복 닉네임
         userProfileRegisterDto.setUserPhoneNumber("1234567890");
         userProfileRegisterDto.setUserAddress("123 Main Street");
 
-        // 테스트 중복 닉네임 예외 처리
+
         mockMvc.perform(post("/api/user/profile")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(userProfileRegisterDto)))
@@ -119,7 +117,7 @@ public class UserProfileTest {
         existingUserProfile.setUserAddress("456 Old Street");
         userProfileRepository.save(existingUserProfile);
 
-        // 테스트용 UserProfileEditDto 생성
+
         UserProfileEditDto userProfileEditDto = new UserProfileEditDto();
         userProfileEditDto.setUserId("mzd021");
         userProfileEditDto.setUserProfileNum(existingUserProfile.getUserProfileNum()); // 저장된 프로필 번호 사용
@@ -145,7 +143,7 @@ public class UserProfileTest {
 
         UserProfile existingUserProfile = new UserProfile();
         existingUserProfile.setUser(existingUser);
-        existingUserProfile.setUserProfileNum(30L); // 적절한 프로필 번호 설정
+        existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
         existingUserProfile.setUserAddress("456 Old Street");
@@ -154,7 +152,7 @@ public class UserProfileTest {
         // 테스트용 UserProfileEditDto 생성
         UserProfileEditDto userProfileEditDto = new UserProfileEditDto();
         userProfileEditDto.setUserId("mzd021");
-        userProfileEditDto.setUserProfileNum(existingUserProfile.getUserProfileNum()); // 저장된 프로필 번호 사용
+        userProfileEditDto.setUserProfileNum(existingUserProfile.getUserProfileNum());
         userProfileEditDto.setUserProfileNickname("기존닉네임");
         userProfileEditDto.setUserPhoneNumber("01012345678");
         userProfileEditDto.setUserAddress("456 New Street");
@@ -177,7 +175,7 @@ public class UserProfileTest {
 
         UserProfile existingUserProfile = new UserProfile();
         existingUserProfile.setUser(existingUser);
-        existingUserProfile.setUserProfileNum(30L); // 적절한 프로필 번호 설정
+        existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
         existingUserProfile.setUserAddress("456 Old Street");
@@ -209,7 +207,7 @@ public class UserProfileTest {
 
         UserProfile existingUserProfile = new UserProfile();
         existingUserProfile.setUser(existingUser);
-        existingUserProfile.setUserProfileNum(30L); // 적절한 프로필 번호 설정
+        existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
         existingUserProfile.setUserAddress("456 Old Street");
@@ -240,7 +238,7 @@ public class UserProfileTest {
 
         UserProfile existingUserProfile = new UserProfile();
         existingUserProfile.setUser(existingUser);
-        existingUserProfile.setUserProfileNum(30L); // 적절한 프로필 번호 설정
+        existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
         existingUserProfile.setUserAddress("456 Old Street");

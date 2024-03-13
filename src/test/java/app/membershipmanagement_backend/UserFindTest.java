@@ -52,7 +52,6 @@ public class UserFindTest {
         }
 
 
-        // API 호출 및 응답 검증
         mockMvc.perform(get("/api/search/user/list")
                         .param("keyword", "")
                         .param("size", "")
@@ -100,7 +99,6 @@ public class UserFindTest {
         }
 
 
-        // API 호출 및 응답 검증
         mockMvc.perform(get("/api/search/user/list")
                         .param("keyword", "")
                         .param("size", "2")
@@ -143,7 +141,6 @@ public class UserFindTest {
         }
 
 
-        // API 호출 및 응답 검증
         mockMvc.perform(get("/api/search/user/list")
                         .param("keyword", "8")
                         .param("size", "")
@@ -162,7 +159,7 @@ public class UserFindTest {
 
     @Test
     void testGetUserDetail() throws Exception {
-        // 사용자 생성 및 저장
+
         List<User> users = new ArrayList<>();
         for (int i = 1; i <= 3; i++) {
             User user = new User();
@@ -189,10 +186,8 @@ public class UserFindTest {
             }
         }
 
-        // 특정 사용자의 UserNum 가져오기
         Long userNumToRetrieve = users.get(0).getUserNum();
 
-        // API 호출 및 응답 검증
         mockMvc.perform(get("/api/search/user/list/detail")
                         .param("userNum", String.valueOf(userNumToRetrieve)))
                 .andExpect(status().isOk())
