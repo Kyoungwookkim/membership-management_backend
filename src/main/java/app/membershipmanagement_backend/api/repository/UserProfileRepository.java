@@ -15,8 +15,8 @@ public interface UserProfileRepository extends JpaRepository<UserProfile, Long> 
 
     List<UserProfile> findByUser(User user);
 
-
     List<UserProfile> findAllByUserMainProfile(int i,  Pageable pageable);
 
     List<UserProfile> findAllByUserMainProfileAndUserUserNameContaining(int i, String keyword,  Pageable pageable);
+
 }
