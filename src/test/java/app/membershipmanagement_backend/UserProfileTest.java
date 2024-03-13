@@ -80,7 +80,7 @@ public class UserProfileTest {
 
         UserProfile existingUserProfile = new UserProfile();
         existingUserProfile.setUser(existingUser);
-        existingUserProfile.setUserProfileNickname("johnny");
+        existingUserProfile.setUserProfileNickname("김반장");
         existingUserProfile.setUserPhoneNumber("9876543210");
         existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         userProfileRepository.save(existingUserProfile);
@@ -88,7 +88,8 @@ public class UserProfileTest {
 
         UserProfileRegisterDto userProfileRegisterDto = new UserProfileRegisterDto();
         userProfileRegisterDto.setUserId("mzd021");
-        userProfileRegisterDto.setUserProfileNickname("johnny");
+        userProfileRegisterDto.setUserProfileNickname("김반장");
+        userProfileRegisterDto.setUserPhoneNumber("01037805837");
         userProfileRegisterDto.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
 
 
