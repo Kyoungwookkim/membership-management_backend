@@ -48,7 +48,7 @@ public class UserProfileTest {
         existingUserProfile.setUser(existingUser);
         existingUserProfile.setUserProfileNickname("황치치");
         existingUserProfile.setUserPhoneNumber("01037805837");
-        existingUserProfile.setUserAddress("456 Main Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         userProfileRepository.save(existingUserProfile);
 
 
@@ -56,7 +56,7 @@ public class UserProfileTest {
         userProfileRegisterDto.setUserId("mzd021");
         userProfileRegisterDto.setUserProfileNickname("김반장");
         userProfileRegisterDto.setUserPhoneNumber("01037805837");
-        userProfileRegisterDto.setUserAddress("123 Main Street");
+        userProfileRegisterDto.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
 
 
         mockMvc.perform(post("/api/user/profile")
@@ -82,15 +82,14 @@ public class UserProfileTest {
         existingUserProfile.setUser(existingUser);
         existingUserProfile.setUserProfileNickname("johnny");
         existingUserProfile.setUserPhoneNumber("9876543210");
-        existingUserProfile.setUserAddress("456 Main Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         userProfileRepository.save(existingUserProfile);
 
 
         UserProfileRegisterDto userProfileRegisterDto = new UserProfileRegisterDto();
         userProfileRegisterDto.setUserId("mzd021");
-        userProfileRegisterDto.setUserProfileNickname("johnny"); // 중복 닉네임
-        userProfileRegisterDto.setUserPhoneNumber("1234567890");
-        userProfileRegisterDto.setUserAddress("123 Main Street");
+        userProfileRegisterDto.setUserProfileNickname("johnny");
+        userProfileRegisterDto.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
 
 
         mockMvc.perform(post("/api/user/profile")
@@ -111,19 +110,19 @@ public class UserProfileTest {
 
         UserProfile existingUserProfile = new UserProfile();
         existingUserProfile.setUser(existingUser);
-        existingUserProfile.setUserProfileNum(30L); // 적절한 프로필 번호 설정
+        existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
-        existingUserProfile.setUserAddress("456 Old Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         userProfileRepository.save(existingUserProfile);
 
 
         UserProfileEditDto userProfileEditDto = new UserProfileEditDto();
         userProfileEditDto.setUserId("mzd021");
-        userProfileEditDto.setUserProfileNum(existingUserProfile.getUserProfileNum()); // 저장된 프로필 번호 사용
+        userProfileEditDto.setUserProfileNum(existingUserProfile.getUserProfileNum());
         userProfileEditDto.setUserProfileNickname("새로운닉네임");
         userProfileEditDto.setUserPhoneNumber("01012345678");
-        userProfileEditDto.setUserAddress("456 New Street");
+        userProfileEditDto.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
 
         mockMvc.perform(put("/api/user/profile")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -146,7 +145,7 @@ public class UserProfileTest {
         existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
-        existingUserProfile.setUserAddress("456 Old Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         userProfileRepository.save(existingUserProfile);
 
         // 테스트용 UserProfileEditDto 생성
@@ -155,7 +154,7 @@ public class UserProfileTest {
         userProfileEditDto.setUserProfileNum(existingUserProfile.getUserProfileNum());
         userProfileEditDto.setUserProfileNickname("기존닉네임");
         userProfileEditDto.setUserPhoneNumber("01012345678");
-        userProfileEditDto.setUserAddress("456 New Street");
+        userProfileEditDto.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
 
         mockMvc.perform(put("/api/user/profile")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -178,7 +177,7 @@ public class UserProfileTest {
         existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
-        existingUserProfile.setUserAddress("456 Old Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         existingUserProfile.setUserMainProfile(0);
         userProfileRepository.save(existingUserProfile);
 
@@ -210,7 +209,7 @@ public class UserProfileTest {
         existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
-        existingUserProfile.setUserAddress("456 Old Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         existingUserProfile.setUserMainProfile(1);
         userProfileRepository.save(existingUserProfile);
 
@@ -241,7 +240,7 @@ public class UserProfileTest {
         existingUserProfile.setUserProfileNum(30L);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
-        existingUserProfile.setUserAddress("456 Old Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         existingUserProfile.setUserMainProfile(1);
         userProfileRepository.save(existingUserProfile);
 

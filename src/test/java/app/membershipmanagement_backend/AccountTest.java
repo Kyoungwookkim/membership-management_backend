@@ -70,10 +70,10 @@ public class AccountTest {
         UserRegisterDto userRegisterDto = new UserRegisterDto();
         userRegisterDto.setUserId("mzd021");
         userRegisterDto.setUserPassword("Test@5678");
-        userRegisterDto.setUserName("John Doe");
-        userRegisterDto.setUserProfileNickname("johnny");
+        userRegisterDto.setUserName("새로운 사용자");
+        userRegisterDto.setUserProfileNickname("김반장");
         userRegisterDto.setUserPhoneNumber("9876543210");
-        userRegisterDto.setUserAddress("456 Main Street");
+        userRegisterDto.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
 
 
 
@@ -100,7 +100,7 @@ public class AccountTest {
         existingUserProfile.setUser(existingUser);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
-        existingUserProfile.setUserAddress("456 Old Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         existingUserProfile.setUserMainProfile(1);
         userProfileRepository.save(existingUserProfile);
 
@@ -129,7 +129,7 @@ public class AccountTest {
         existingUserProfile.setUser(existingUser);
         existingUserProfile.setUserProfileNickname("기존닉네임");
         existingUserProfile.setUserPhoneNumber("01012345678");
-        existingUserProfile.setUserAddress("456 Old Street");
+        existingUserProfile.setUserAddress("메가존빌딩, 46 논현로85길 강남구 서울특별시");
         existingUserProfile.setUserMainProfile(1);
         userProfileRepository.save(existingUserProfile);
 
