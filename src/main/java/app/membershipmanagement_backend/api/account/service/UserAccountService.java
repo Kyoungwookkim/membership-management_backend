@@ -26,7 +26,7 @@ public class UserAccountService {
 
     @Transactional
     public DefaultResultDto register(UserRegisterDto userRegisterDto){
-        System.out.println(userRegisterDto.getUserName());
+
         if (accountRepository.existsByUserId(userRegisterDto.getUserId())) {
             return DefaultResultDto.builder().success(false).message("중복된 아이디가 있습니다.").build();
         }
